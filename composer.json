@@ -1,5 +1,5 @@
 {
-    "name": "saxid/simplesamlphp-bundle",
+    "name": "sax-id/simplesamlphp-bundle",
     "type": "symfony-bundle",
     "description": "SimpleSAMLphp Bundle for Symfony2. Forked from hslavich/simplesamlphp-bundle.",
     "keywords": ["simplesamlphp", "saml"],
@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "symfony/symfony": ">=2.4",
-        "simplesamlphp/simplesamlphp": "dev-master"
+        "symfony/symfony": ">=2.7",
+        "simplesamlphp/simplesamlphp": "~1.14"
     },
     "autoload": {
         "psr-4": { "Saxid\\SimplesamlphpBundle\\": "" }
