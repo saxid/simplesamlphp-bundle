@@ -10,3 +10,10 @@ services:
     simplesamlphp.logout_handler:
         class: Saxid\SimplesamlphpBundle\Security\Http\Logout\LogoutSuccessHandler
         arguments: [ @simplesamlphp.auth, @router ]
+
+    simplesamlphp.logout_link_twig_extension:
+        class: Saxid\SimplesamlphpBundle\Twig\LogoutLinkExtension
+        arguments: [ @simplesamlphp.auth ]
+        public: false
+        tags:
+            - { name: twig.extension }
