@@ -1,5 +1,5 @@
 {
-    "name": "sax-id/simplesamlphp-bundle",
+    "name": "sax_id/simplesamlphp-bundle",
     "type": "symfony-bundle",
     "description": "SimpleSAMLphp Bundle for Symfony2. Forked from hslavich/simplesamlphp-bundle.",
     "keywords": ["simplesamlphp", "saml"],
