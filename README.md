@@ -7,18 +7,18 @@ This is a SimpleSAMLphp Bundle for Symfony2. We initially forked it from [`hslav
 
 Add this bundle to your Symfony2 project.
 
-    composer require saxid/simplesamlphp-bundle
+    composer require sax_id/simplesamlphp-bundle
 
 or manually require this bundle in your `composer.json` file.
 
     "require": {
         ...
-        "saxid/simplesamlphp-bundle": "dev-master"
+        "sax_id/simplesamlphp-bundle": "dev-master@dev"
     }
 
 Update your project.
 
-    composer update saxid/simplesamlphp-bundle
+    composer update sax_id/simplesamlphp-bundle
 
 Activate the bundle in `app/AppKernel.php`.
 
@@ -131,4 +131,4 @@ Enable session bridge storage (see [Symfony documentation](http://symfony.com/do
 
 Create an alias on your webserver, e.g. for an Apache2 webserver, add this line to you `http.conf.local` (or other desired configuration file).
 
-    Alias /simplesaml /home/myapp/vendor/simplesamlphp/simplesamlphp/www
+    Alias /simplesaml /home/myapp/vendor/simplesamlphp/simplesamlphp{/www}
