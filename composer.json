@@ -1,5 +1,5 @@
 {
-    "name": "saxid/simplesamlphp-bundle",
+    "name": "sax-id/simplesamlphp-bundle",
     "type": "symfony-bundle",
     "description": "SimpleSAMLphp Bundle for Symfony2. Forked from hslavich/simplesamlphp-bundle.",
     "keywords": ["simplesamlphp", "saml"],
@@ -7,6 +7,10 @@
         {
             "name": "Moritz Hesse",
             "email": "moritz.hesse@tu-dresden.de"
+        },
+        {
+            "name": "Jan Frömberg",
+            "email": "jan.froemberg@tu-dresden.de"
         }
     ],
     "require": {
