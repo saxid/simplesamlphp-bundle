@@ -7,10 +7,14 @@
         {
             "name": "Moritz Hesse",
             "email": "moritz.hesse@tu-dresden.de"
+        },
+        {
+            "name": "Jan Frömberg",
+            "email": "jan.froemberg@tu-dresden.de"
         }
     ],
     "require": {
-        "symfony/symfony": ">=2.7",
+        "symfony/symfony": ">=2.4",
         "simplesamlphp/simplesamlphp": "~1.14"
     },
     "autoload": {
