@@ -131,4 +131,4 @@ Enable session bridge storage (see [Symfony documentation](http://symfony.com/do
 
 Create an alias on your webserver, e.g. for an Apache2 webserver, add this line to you `http.conf.local` (or other desired configuration file).
 
-    Alias /simplesaml /home/myapp/vendor/simplesamlphp/simplesamlphp{/www}
+    Alias /simplesamlphp /home/myapp/vendor/simplesamlphp/simplesamlphp{/www}

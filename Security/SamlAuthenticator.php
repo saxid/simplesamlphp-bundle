@@ -31,19 +31,19 @@ class SamlAuthenticator implements SimplePreAuthenticatorInterface
         $this->samlauth->requireAuth();
         $attributes = $this->samlauth->getAttributes();
 
-        // uid LDAP attribute name
-        if(isset($attributes['uid'][0])) {
-            $uid = $attributes['uid'][0];
+        // eppn SAML 1 attribute name
+        if(isset($attributes['urn:mace:dir:attribute-def:eduPersonPrincipalName'][0])) {
+            $eppn = $attributes['urn:mace:dir:attribute-def:eduPersonPrincipalName'][0];
         }
-        // uid SAML 2 attribute name
-        elseif(isset($attributes['urn:oid:0.9.2342.19200300.100.1.1'][0])) {
-            $uid = $attributes['urn:oid:0.9.2342.19200300.100.1.1'][0];
+        // eppn SAML 2 attribute name
+        elseif(isset($attributes['urn:oid:1.3.6.1.4.1.5923.1.1.1.6'][0])) {
+            $eppn = $attributes['urn:oid:1.3.6.1.4.1.5923.1.1.1.6'][0];
         }
         else {
-            throw new MissingOptionsException('No uid found');
+            throw new MissingOptionsException('No ePPN found');
         }
 
-        $token = new SamlToken($uid);
+        $token = new SamlToken($eppn);
         $token->setAttributes($attributes);
 
         return $token;
