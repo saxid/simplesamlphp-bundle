@@ -16,9 +16,9 @@ class SamlAuthenticator implements SimplePreAuthenticatorInterface
     protected $samlAuth;
     protected $session;
 
-    public function __construct($samlauth, Session $session, $authAttribute)
+    public function __construct($samlAuth, Session $session, $authAttribute)
     {
-        $this->samlauth = $samlauth;
+        $this->samlAuth = $samlAuth;
         $this->session = $session;
         $this->authAttribute = $authAttribute;
     }
