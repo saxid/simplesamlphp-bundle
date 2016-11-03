@@ -23,6 +23,8 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->children()
                 ->scalarNode('sp')->defaultValue('default-sp')->end()
+                //SAML 2 commonName
+                ->scalarNode('authentication_attribute')->defaultValue('urn:oid:2.5.4.3')->end()
             ->end()
         ;
 

@@ -1,19 +1,19 @@
 services:
     simplesamlphp.auth:
         class: SimpleSAML_Auth_Simple
-        arguments: [ %simplesamlphp.sp% ]
+        arguments: [ '%simplesamlphp.sp%' ]
 
     simplesamlphp.authenticator:
         class: Saxid\SimplesamlphpBundle\Security\SamlAuthenticator
-        arguments: [ @simplesamlphp.auth, @session ]
+        arguments: [ '@simplesamlphp.auth', '@session', '%simplesamlphp.auth_attribute%' ]
 
     simplesamlphp.logout_handler:
         class: Saxid\SimplesamlphpBundle\Security\Http\Logout\LogoutSuccessHandler
-        arguments: [ @simplesamlphp.auth, @router ]
+        arguments: [ '@simplesamlphp.auth', '@router' ]
 
     simplesamlphp.logout_link_twig_extension:
         class: Saxid\SimplesamlphpBundle\Twig\LogoutLinkExtension
-        arguments: [ @simplesamlphp.auth ]
+        arguments: [ '@simplesamlphp.auth' ]
         public: false
         tags:
             - { name: twig.extension }
