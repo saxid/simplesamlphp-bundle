@@ -15,7 +15,7 @@ class LogoutLinkExtension extends \Twig_Extension
      */
     public function getFunctions() {
         return array(
-            'getLogoutURL' => new \Twig_SimpleFunction($this, 'getLogoutURL')
+            'getLogoutURL' => new \Twig_Function_Method($this, 'getLogoutURL')
         );
     }
 
