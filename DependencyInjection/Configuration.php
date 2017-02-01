@@ -24,8 +24,12 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('sp')->defaultValue('default-sp')->end()
                 //SAML 2 commonName
-                ->scalarNode('authentication_attribute')->defaultValue('urn:oid:2.5.4.3')->end()
-            ->end()
+                //->scalarNode('authentication_attribute')->defaultValue('urn:oid:2.5.4.3')->end()
+                ->arrayNode('authentication_attribute')
+                            ->prototype('scalar')->end()
+                            ->defaultValue(array('urn:oid:1.3.6.1.4.1.5923.1.1.1.6', 'urn:mace:dir:attribute-def:eduPersonPrincipalName'))
+                        ->end()
+                ->end()
         ;
 
         return $treeBuilder;

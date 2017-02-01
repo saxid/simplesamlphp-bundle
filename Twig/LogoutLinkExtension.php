@@ -12,10 +12,11 @@ class LogoutLinkExtension extends \Twig_Extension
 
     /**
      * {@inheritdoc}
+     * fixed for Twig 2.0 : Twig_Function_Method -> Twig_SimpleFunction
      */
     public function getFunctions() {
         return array(
-            'getLogoutURL' => new \Twig_Function_Method($this, 'getLogoutURL')
+            new \Twig_SimpleFunction('getLogoutURL', array($this, 'getLogoutURL'))
         );
     }
 

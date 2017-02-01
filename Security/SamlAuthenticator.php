@@ -32,13 +32,18 @@ class SamlAuthenticator implements SimplePreAuthenticatorInterface
         $this->samlAuth->requireAuth();
         $attributes = $this->samlAuth->getAttributes();
 
-        if (!array_key_exists($this->authAttribute, $attributes)) {
-            throw new MissingSamlAuthAttributeException(
-                sprintf("Attribute '%s' was not found in SAMLResponse", $this->authAttribute)
-            );
-        }
+        foreach ($this->authAttribute as $val){
 
-        $eppn = $attributes[$this->authAttribute][0];
+          if (array_key_exists($val, $attributes)) {
+              $eppn = $attributes[$val][0];
+              break;
+          } else {
+            throw new MissingSamlAuthAttributeException(
+                sprintf("Attribute '%s' was not found in SAMLResponse", $val)
+            );
+          }
+
+        }
 
         $token = new SamlToken($eppn);
         $token->setAttributes($attributes);
