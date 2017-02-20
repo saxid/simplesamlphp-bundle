@@ -41,12 +41,11 @@ class SamlAuthenticator implements SimplePreAuthenticatorInterface
               break;
           }
 
-          if ($i === $numItems) {
+          if (++$i === $numItems) {
             throw new MissingSamlAuthAttributeException(
-                sprintf("Attribute '%s' was not found in SAMLResponse", $val)
+                sprintf("Your configured Attributes '%s' were not found in SAMLResponse", implode(", ", $this->authAttribute))
             );
           }
-          $i++;
 
         }
 
