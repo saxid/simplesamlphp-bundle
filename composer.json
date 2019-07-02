@@ -15,7 +15,7 @@
     ],
     "require": {
         "symfony/symfony": ">=2.8",
-        "simplesamlphp/simplesamlphp": "~1.16"
+        "simplesamlphp/simplesamlphp": "~1.17"
     },
     "autoload": {
         "psr-4": { "Saxid\\SimplesamlphpBundle\\": "" }
